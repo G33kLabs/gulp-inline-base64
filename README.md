@@ -40,7 +40,8 @@ gulp.task('sass', function() {
         }))
         .pipe(inline_base64({
             baseDir: path_src,
-            maxSize: 14 * 1024
+            maxSize: 14 * 1024,
+            debug: true
         }))
         .pipe(autoprefixer("last 2 version", "> 1%", {
             cascade: true
@@ -48,6 +49,12 @@ gulp.task('sass', function() {
         .pipe(gulp.dest(path_tmp + '/css'))
 });
 ```
+
+Options
+-------
+ - ``baseDir`` : the root path for assets
+ - ``maxSize`` : define the limit size of injected assets
+ - ``debug`` : show debug messages
 
 Force an asset to be encoded even if maxSize is reached
 -------------------------------------------------------
