@@ -15,7 +15,7 @@ npm install --save-dev gulp-inline-base64
 Use it
 ------
 
-Here is my sass config :
+Here is my sass config. As you can see, I use the 'maxSize' option to specitfy that files larger than 14kb are not injected into the css file.
 
 ```
 
@@ -40,7 +40,7 @@ gulp.task('sass', function() {
         }))
         .pipe(inline_base64({
             baseDir: path_src,
-            maxSize: 16 * 1024
+            maxSize: 14 * 1024
         }))
         .pipe(autoprefixer("last 2 version", "> 1%", {
             cascade: true
