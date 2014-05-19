@@ -56,10 +56,10 @@ Options
  - ``maxSize`` : define the limit size of injected assets
  - ``debug`` : show debug messages
 
-Force an asset to be encoded even if maxSize is reached
--------------------------------------------------------
+Force injection
+---------------
 
-In your css file, just add ",true" to the image url.
+In your css file, just add ",true" to the image url : it will force the asset to be injected in base64 in css file, event if the ``maxSize`` is reached.
 
 ```
 div.logo {
