@@ -37,7 +37,7 @@ module.exports = function(opts) {
 
                         // File will not be included because of his size
                         if (opts.maxSize && size > opts.maxSize && !matches[i].force) {
-                            gutil.log('gulp-inline-base64:', gutil.colors.yellow('file is greater than ' + opts.maxSize + ', so we skip') + gutil.colors.gray(' (' + filepath + ')'));
+                            gutil.log('gulp-inline-base64:', gutil.colors.yellow('file is greater than ' + opts.maxSize + 'kb => skip') + gutil.colors.gray(' (' + filepath + ')'));
                             str = str.replace(matches[i].txt, 'url(' + matches[i].url + ')');
                         }
 
@@ -48,7 +48,7 @@ module.exports = function(opts) {
                         }
 
                     } else {
-                        gutil.log('gulp-inline-base64:', gutil.colors.yellow('file not found and it is passed') + gutil.colors.gray(' (' + filepath + ')'));
+                        gutil.log('gulp-inline-base64:', gutil.colors.red('file not found => skip') + gutil.colors.gray(' (' + filepath + ')'));
                     }
                 }
             }
