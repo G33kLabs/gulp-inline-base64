@@ -31,22 +31,22 @@ gulp.task('sass', function() {
         path_src + '/css/**/*.scss',
         '!' + path_src + '/css/**/_*.scss'
     ])
-        .pipe(sass({
-            includePaths: [
-                path_src + '/css/',
-                'bower_components/',
-            ],
-            imagePath: path_src
-        }))
-        .pipe(inline_base64({
-            baseDir: path_src,
-            maxSize: 14 * 1024,
-            debug: true
-        }))
-        .pipe(autoprefixer("last 2 version", "> 1%", {
-            cascade: true
-        }))
-        .pipe(gulp.dest(path_tmp + '/css'))
+    .pipe(sass({
+        includePaths: [
+            path_src + '/css/',
+            'bower_components/',
+        ],
+        imagePath: path_src
+    }))
+    .pipe(inline_base64({
+        baseDir: path_src,
+        maxSize: 14 * 1024,
+        debug: true
+    }))
+    .pipe(autoprefixer("last 2 version", "> 1%", {
+        cascade: true
+    }))
+    .pipe(gulp.dest(path_tmp + '/css'))
 });
 ```
 
@@ -56,8 +56,8 @@ Options
  - ``maxSize`` : define the limit size of injected assets
  - ``debug`` : show debug messages
 
-Force injection
----------------
+Force asset injection
+---------------------
 
 In your css file, just add ",true" to the image url : it will force the asset to be injected in base64 in css file, event if the ``maxSize`` is reached.
 
@@ -65,5 +65,4 @@ In your css file, just add ",true" to the image url : it will force the asset to
 div.logo {
 	background: transparent url(/img/logo.png,true) no-repeat center center;
 }
-
 ```
