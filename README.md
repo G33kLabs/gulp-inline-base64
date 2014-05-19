@@ -3,7 +3,7 @@ GULP inline-base64
 
 This helper will inject images and fonts into your css files.
 
-Warning ! This techniques is really efficient with small files (<14 Kb) cause it avoids DNS requests and makes the page loading faster. But for larger files it will be a mistake to use it !
+Warning ! This technique is really efficient with small files (<14 Kb) cause it avoids DNS requests and makes the page loading faster. But for larger files it will be a mistake to use it !
 
 Install it
 ----------
@@ -18,12 +18,10 @@ Use it
 Here is my sass config. As you can see, I use the 'maxSize' option to specitfy that files larger than 14kb are not injected into the css file.
 
 ```
-
 var sass = require('gulp-sass'),
 	inline_base64 = require('gulp-inline-base64'),
 	autoprefixer = require('gulp-autoprefixer');
 ...
-
 
 // SASS
 gulp.task('sass', function() {
@@ -59,7 +57,7 @@ Options
 Force asset injection
 ---------------------
 
-In your css file, just add ",true" to the image url : it will force the asset to be injected in base64 in css file, event if the ``maxSize`` is reached.
+In your css file, just add ``,true`` to the image url : it will force the asset to be injected in base64 in css file, event if the ``maxSize`` is reached.
 
 ```
 div.logo {
