@@ -48,3 +48,15 @@ gulp.task('sass', function() {
         .pipe(gulp.dest(path_tmp + '/css'))
 });
 ```
+
+Force an asset to be encoded even if maxSize is reached
+-------------------------------------------------------
+
+In your css file, just add ",true" to the image url.
+
+```
+div.logo {
+	background: transparent url(/img/logo.png,true) no-repeat center center;
+}
+
+```
