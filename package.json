@@ -1,6 +1,6 @@
 {
     "name": "gulp-inline-base64",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "description": "Convert assets to inline datauri, ideal to integrate small pictures in your css.",
     "main": "index.js",
     "dependencies": {

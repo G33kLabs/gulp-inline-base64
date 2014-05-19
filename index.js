@@ -37,7 +37,7 @@ module.exports = function(opts) {
 
                         // File will not be included because of his size
                         if (opts.maxSize && size > opts.maxSize && !matches[i].force) {
-                            if (opts.debug) gutil.log('gulp-inline-base64:', gutil.colors.yellow('file is greater than ' + opts.maxSize + 'kb => skip') + gutil.colors.gray(' (' + filepath + ')'));
+                            if (opts.debug) gutil.log('gulp-inline-base64:', gutil.colors.yellow('file is greater than ' + Math.round(size / 1024) + ' > ' + Math.round(opts.maxSize / 1024) + 'kb => skip') + gutil.colors.gray(' (' + filepath + ')'));
                             str = str.replace(matches[i].txt, 'url(' + matches[i].url + ')');
                         }
 
