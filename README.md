@@ -51,6 +51,7 @@ gulp.task('sass', function() {
 Options
 -------
  - ``baseDir`` : the root path for assets
+ - ``useRelativePath`` : overrides baseDir; root path is relative to the input file's directory
  - ``maxSize`` : define the limit size of injected assets
  - ``debug`` : show debug messages
 

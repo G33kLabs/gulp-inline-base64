@@ -15,6 +15,9 @@ module.exports = function(opts) {
         var reg_exp = /url\([|\ |\'|\"](.*?)[|\ |\'|\"](|\,(.*?))\)/g;
         var isStream = file.contents && typeof file.contents.on === 'function' && typeof file.contents.pipe === 'function';
         var isBuffer = file.contents instanceof Buffer;
+        if(opts.useRelativePath){
+            app_path = file.path.replace(/\/[^/]+$/, '/');
+        }
         if (isBuffer) {
             var str = String(file.contents);
 
