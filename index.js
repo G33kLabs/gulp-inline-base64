@@ -12,7 +12,7 @@ module.exports = function(opts) {
 
     var datauri = function(file, callback) {
         var app_path = opts.baseDir;
-        var reg_exp = /url\([|\ |\'|\"](.*?)[|\ |\'|\"](|\,(.*?))\)/g;
+        var reg_exp = /url\([ '"]?(.*?)[ '"]?(|\,(.*?))\)/g;
         var isStream = file.contents && typeof file.contents.on === 'function' && typeof file.contents.pipe === 'function';
         var isBuffer = file.contents instanceof Buffer;
         if(opts.useRelativePath){
